@@ -15,7 +15,12 @@ public class CalculadoraRentabilidade {
     }
 
     public float getRendimentoBruto() {
-	return 13.97f;
+	float rendimentoBruto = converteDiasParaAno(dias) * aplicacaoInicial * (taxaJuros / 100);
+	return rendimentoBruto;
+    }
+
+    private float converteDiasParaAno(int dias) {
+	return dias / 365.0f;
     }
 
 }
