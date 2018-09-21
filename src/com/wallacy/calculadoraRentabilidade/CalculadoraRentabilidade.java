@@ -24,7 +24,24 @@ public class CalculadoraRentabilidade {
     }
 
     public float getImpostoRenda() {
-	return 3.14f;
+	float rendimento = getRendimentoBruto();
+	float aliquota = getAliquotaImposto();
+	float impostoRenda = (aliquota / 100.0f) * rendimento;
+	return impostoRenda;
+    }
+
+    private float getAliquotaImposto() {
+	float aliquota = 0.0f;
+	if (dias <= 180) {
+	    aliquota = 22.5f;
+	} else if (dias > 180 && dias <= 360) {
+	    aliquota = 20.0f;
+	} else if (dias > 361 && dias < 720) {
+	    aliquota = 17.5f;
+	} else if (dias > 720) {
+	    aliquota = 15.0f;
+	}
+	return aliquota;
     }
 
 }
