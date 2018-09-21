@@ -23,4 +23,8 @@ public class CalculadoraRentabilidade {
 	return dias / 365.0f;
     }
 
+    public float getImpostoRenda() {
+	return 3.14f;
+    }
+
 }
